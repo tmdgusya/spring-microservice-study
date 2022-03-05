@@ -1,11 +1,13 @@
 server:
-  port: 9001
+  port: 0 # random port
 
 spring:
   application:
     name: user-service
 
 eureka:
+  instance:
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}} # eureka-server ? display ?? ??
   client:
     fetch-registry: true # eureka server ? ?? ??? ????? ??? ???.
     register-with-eureka: true # eureka ? ??? ???.
