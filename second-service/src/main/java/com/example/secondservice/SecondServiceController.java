@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SecondServiceController {
 
     @GetMapping("/welcome")
-    public String welcome(@RequestHeader("second-request") String header) {
-        System.out.println(header);
+    public String welcome() {
         return "Welcome to the Second Service";
     }
 

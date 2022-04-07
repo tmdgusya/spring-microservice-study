@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class FirstServiceController {
 
     @GetMapping("/welcome")
-    public String welcome(@RequestHeader("first-request") String header) {
-        System.out.println(header);
+    public String welcome() {
         return "Welcome to the First Service";
     }
 
