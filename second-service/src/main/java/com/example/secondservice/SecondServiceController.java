@@ -15,4 +15,10 @@ public class SecondServiceController {
         return "Welcome to the Second Service";
     }
 
+
+    @GetMapping("/message")
+    public String message(@RequestHeader("second-request") String header) {
+        return header;
+    }
+
 }
