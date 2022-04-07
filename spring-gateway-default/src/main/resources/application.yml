@@ -19,10 +19,16 @@ spring:
           predicates:
             - Path=/first-service/**
           filters:
-            - CustomFilter
+#            - CustomFilter
         - id: second-service
           uri: http://127.0.0.1:8082/
           predicates:
             - Path=/second-service/**
           filters:
-            - CustomFilter
+#            - CustomFilter
+      default-filters:
+        - name: GlobalFilter
+          args:
+            baseMessage: Spring Cloud Gateway Global Filter
+            preLogger: true
+            postLogger: true
