@@ -1,15 +1,12 @@
 server:
-  port: 0 # random port
+  port: 9090
 
 spring:
   application:
     name: user-service
+  zipkin:
+    base-url: http://localhost:9411
 
-eureka:
-  instance:
-    instance-id: ${spring.cloud.client.hostname}:${spring.application.instance_id:${random.value}} # eureka-server ? display ?? ??
-  client:
-    fetch-registry: true # eureka server ? ?? ??? ????? ??? ???.
-    register-with-eureka: true # eureka ? ??? ???.
-    service-url:
-      defaultZone: http://127.0.0.1:8761/eureka # registry eureka server end-point
+logging:
+  level:
+    root: info
